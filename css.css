@@ -1,0 +1,20 @@
+
+#element1 {
+    margin-left: calc(65 * 16.5px);
+}
+
+#element4, #element12 {
+    margin-left: calc(65 * 10.5px);
+}
+
+#element21, #element39, #element57, #element75 {
+    margin-left: calc(65 * 0.5px);
+}
+
+#element90, #element104 {
+    margin-left: calc(65 * 3.5px);
+}
+
+#element90 {
+    margin-top: calc(65 * 0.5px);
+}
