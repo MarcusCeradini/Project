@@ -1,6 +1,10 @@
 const periodicTable = document.getElementById("periodicTable");
 
 
+//This function sets up a table of squares which are buttons
+// meaning that later when these buttons/squares are clicked
+// on, something will happen. Whats left is to format the table
+// and add the page to which the user will be sent to
 function setupElement(startAt, amount, parent) {
     for (let i = startAt; i < startAt + amount; i++) {
         const button = document.createElement("button");
@@ -20,6 +24,8 @@ function setupElement(startAt, amount, parent) {
     }
     return amount;
 }
+
+
 
 function setupTable() {
     let currentElement = 0;
