@@ -44,4 +44,5 @@ function setupTable() {
     }
 }
 
+// The function is called and the table is setup
 setupTable();
