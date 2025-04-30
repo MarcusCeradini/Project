@@ -1,3 +1,5 @@
+//This initializes the periodicTable element and gives it the property
+// of talking about the periodTable ID in the html.
 const periodicTable = document.getElementById("periodicTable");
 
 
@@ -26,7 +28,10 @@ function setupElement(startAt, amount, parent) {
 }
 
 
-
+//The table is formatted by creating a list of how many elements
+//should be in each row. It procedes to create 9 rows by looping
+//it 9 times and adds the amount of elements needed by iterating 
+//through the elementsInRow variable which contains the list.
 function setupTable() {
     let currentElement = 0;
     let elementsInRow = [2, 8, 8, 18, 18, 18, 18, 14, 14];
