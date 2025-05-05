@@ -1,6 +1,12 @@
+//This initializes the periodicTable element and gives it the property
+// of talking about the periodTable ID in the html.
 const periodicTable = document.getElementById("periodicTable");
 
 
+//This function sets up a table of squares which are buttons
+// meaning that later when these buttons/squares are clicked
+// on, something will happen. Whats left is to format the table
+// and add the page to which the user will be sent to
 function setupElement(startAt, amount, parent) {
     for (let i = startAt; i < startAt + amount; i++) {
         const button = document.createElement("button");
@@ -21,6 +27,11 @@ function setupElement(startAt, amount, parent) {
     return amount;
 }
 
+
+//The table is formatted by creating a list of how many elements
+//should be in each row. It procedes to create 9 rows by looping
+//it 9 times and adds the amount of elements needed by iterating 
+//through the elementsInRow variable which contains the list.
 function setupTable() {
     let currentElement = 0;
     let elementsInRow = [2, 8, 8, 18, 18, 18, 18, 14, 14];
@@ -33,4 +44,5 @@ function setupTable() {
     }
 }
 
+// The function is called and the table is setup
 setupTable();
