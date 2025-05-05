@@ -29,7 +29,7 @@ function setupElement(startAt, amount, parent) {
 
 
 //The table is formatted by creating a list of how many elements
-//should be in each row. It procedes to create 9 rows by looping
+//should be in each row. It proceeds to create 9 rows by looping
 //it 9 times and adds the amount of elements needed by iterating 
 //through the elementsInRow variable which contains the list.
 function setupTable() {
