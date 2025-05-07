@@ -25,7 +25,6 @@ function setupElement(startAt, amount, parent) {
         // corresponding element page
         button.addEventListener("click", function elementClicked() {
             window.location.href = `https://marcusceradini.github.io/Project/elements/element${trueI}.html`
-            button.style.backgroundColor = "Green";
         });
         parent.appendChild(button);
     }
