@@ -1,0 +1,4 @@
+# Project Overview:
+This is a Interactive-Sometimes Unreliable Periodic Table. At first it was supposed to be a always reliable periodic table but after an unfortunate turn of a wheel it was made to be sometimes unreliable. This website provides users with information regarding any element they want. Except the information is sometimes unreliable, sadly. Enjoy our website!!!
+# Deployment Instructions:
+Go to this website: https://marcusceradini.github.io/Project/index.html you can either click on the element you want information about or you can use the search bar to search by atomic number and acquire this information.
