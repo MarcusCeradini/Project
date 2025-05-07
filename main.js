@@ -1,6 +1,7 @@
 //This initializes the periodicTable element and gives it the property
 // of talking about the periodTable ID in the html.
 const periodicTable = document.getElementById("periodicTable");
+let coffee = 0
 
 
 //This function sets up a table of squares which are buttons
@@ -101,3 +102,25 @@ searchButton.addEventListener("click", () => {
         alert("Element not found.");
     }
 });
+
+document.onclick = hideMenu;
+    document.oncontextmenu = rightClick;
+    function hideMenu() {
+        document.getElementById(
+            "contextMenu").style.display = "none"
+    }
+    function rightClick(e) {
+        e.preventDefault();
+
+        if (document.getElementById(
+            "contextMenu").style.display == "block")
+            hideMenu();
+        else {
+            let menu = document
+                .getElementById("contextMenu")
+            coffee ++
+            window.alert("Plus one to coffee added")
+            window.alert(`${coffee}`)
+                
+        }
+    }
