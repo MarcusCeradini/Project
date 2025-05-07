@@ -103,13 +103,17 @@ searchButton.addEventListener("click", () => {
     }
 });
 
-
+// wehnevre the user clicks on the screen, the menu will be hidden
 document.onclick = hideMenu;
+//when the user right clicks, the righclick function will be called
     document.oncontextmenu = rightClick;
+    //hides the contextmenu
     function hideMenu() {
         document.getElementById(
             "contextMenu").style.display = "none"
     }
+    // function that handles the right click event, the default brwoser context menu is preveneted
+    // from showing and if hides the custom context menu if it is already open
     function rightClick(e) {
         e.preventDefault();
 
@@ -117,8 +121,10 @@ document.onclick = hideMenu;
             "contextMenu").style.display == "block")
             hideMenu();
         else {
+            //if not visble, it will be shown and perform an action
             let menu = document
                 .getElementById("contextMenu")
+            // coffee varibale is incremeneted and user is alerted
             coffee ++
             window.alert("Plus one to coffee added")
             window.alert(`${coffee}`)
