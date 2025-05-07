@@ -20,7 +20,7 @@ function setupElement(startAt, amount, parent) {
                        (i >= 104 && i <= 117) ? i - 14 : i + 1);
 
         button.addEventListener("click", function elementClicked() {
-            prompt(`Element id=${trueI}`);
+            window.location.href = `https://marcusceradini.github.io/Project/elements/element${trueI}.html`
         });
         parent.appendChild(button);
     }
@@ -46,3 +46,47 @@ function setupTable() {
 
 // The function is called and the table is setup
 setupTable();
+
+const searchContainer = document.createElement("div");
+const searchInput = document.createElement("input");
+searchInput.type = "number";
+searchInput.placeholder = "Enter element number (1–118)";
+searchInput.style.margin = "10px";
+
+const searchButton = document.createElement("button");
+searchButton.textContent = "Search";
+
+searchContainer.appendChild(searchInput);
+searchContainer.appendChild(searchButton);
+document.body.insertBefore(searchContainer, periodicTable);
+
+searchButton.addEventListener("click", () => {
+    const atomicNumber = parseInt(searchInput.value);
+    if (isNaN(atomicNumber) || atomicNumber < 1 || atomicNumber > 118) {
+        alert("Please enter a valid element number (1–118).");
+        return;
+    }
+
+    // Recreate the mapping used in setupElement to find the correct ID
+    let foundId = null;
+    for (let i = 0; i < 118; i++) {
+        const trueI = ((i >= 57 && i <= 71) ? i + 15 :
+                      (i >= 72 && i <= 74) ? i + 15  :
+                      (i >= 75 && i <= 89) ? i + 29 :
+                      (i >= 90 && i <= 103) ? i - 32 :
+                      (i >= 104 && i <= 117) ? i - 14 : i + 1);
+        if (trueI === atomicNumber) {
+            foundId = `element${i}`;
+            break;
+        }
+    }
+
+    if (foundId) {
+        const button = document.getElementById(foundId);
+        button.scrollIntoView({ behavior: "smooth", block: "center" });
+        button.style.backgroundColor = "yellow";
+        setTimeout(() => button.style.backgroundColor = "", 1500);
+    } else {
+        alert("Element not found.");
+    }
+});
