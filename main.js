@@ -19,6 +19,17 @@ function setupElement(startAt, amount, parent) {
                        (i >= 75 && i <= 89) ? i + 29 :
                        (i >= 90 && i <= 103) ? i - 32 :
                        (i >= 104 && i <= 117) ? i - 14 : i + 1);
+
+        //code to add images on element buttons
+        const img = document.createElement("img");
+        img.src = `https://marcusceradini.github.io/Project/images/element${trueI}.png`;
+        img.alt = `Element ${trueI}`;
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.style.objectFit = "cover";
+
+        // Append image to button
+        button.appendChild(img);
         // an event listener is added to the button which will trigger
         // when the button is clicked The function elementClicked
         // will be called and the page will be redirected to the
