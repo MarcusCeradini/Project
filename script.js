@@ -12,8 +12,8 @@ function setupElement(startAt, amount, parent) {
     for (let i = startAt; i < startAt + amount; i++) {
         const button = document.createElement("button");
         button.id = `element${i}`;
-        button.style.width = "120px";
-        button.style.height = "120px";
+        button.style.width = "100px";
+        button.style.height = "100px";
 
         const trueI = ((i >= 57 && i <= 71) ? i + 15 :
                        (i >= 72 && i <= 74) ? i + 15  :
