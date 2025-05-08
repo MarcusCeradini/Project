@@ -1,7 +1,7 @@
 //This initializes the periodicTable element and gives it the property
 // of talking about the periodTable ID in the html.
 const periodicTable = document.getElementById("periodicTable");
-let coffee = 0
+let coffee = 0;
 
 
 //This function sets up a table of squares which are buttons
@@ -12,35 +12,33 @@ function setupElement(startAt, amount, parent) {
     for (let i = startAt; i < startAt + amount; i++) {
         const button = document.createElement("button");
         button.id = `element${i}`;
-        button.style.width = "100px";
-        button.style.height = "100px";
+        button.style.width = "65px";
+        button.style.height = "65px";
+
         const trueI = ((i >= 57 && i <= 71) ? i + 15 :
                        (i >= 72 && i <= 74) ? i + 15  :
                        (i >= 75 && i <= 89) ? i + 29 :
                        (i >= 90 && i <= 103) ? i - 32 :
                        (i >= 104 && i <= 117) ? i - 14 : i + 1);
 
-        //code to add images on element buttons
         const img = document.createElement("img");
         img.src = `https://marcusceradini.github.io/Project/images/element${trueI}.png`;
         img.alt = `Element ${trueI}`;
         img.style.width = "100%";
         img.style.height = "100%";
         img.style.objectFit = "cover";
-
-        // Append image to button
         button.appendChild(img);
-        // an event listener is added to the button which will trigger
-        // when the button is clicked The function elementClicked
-        // will be called and the page will be redirected to the
-        // corresponding element page
-        button.addEventListener("click", function elementClicked() {
-            window.location.href = `https://marcusceradini.github.io/Project/elements/element${trueI}.html`
+
+        button.addEventListener("click", function () {
+            window.location.href = `https://marcusceradini.github.io/Project/elements/element${trueI}.html`;
         });
-        parent.appendChild(button);
+
+        parent.appendChild(button); 
     }
+
     return amount;
 }
+
 
 
 //The table is formatted by creating a list of how many elements
@@ -61,26 +59,23 @@ function setupTable() {
 
 // The function is called and the table is setup
 setupTable();
-//A search bar is created and defined as input 
+
 const searchContainer = document.createElement("div");
+searchContainer.setAttribute('class' , 'searchContainer')
+searchContainer.setAttribute('class' , 'search')
 const searchInput = document.createElement("input");
-// The input type is set to number to restrict input to numbers
 searchInput.type = "number";
-// The possible input values are restricted to 1-118 but not enforced using javascript
 searchInput.placeholder = "Enter element number (1–118)";
 searchInput.style.margin = "10px";
-// The button is created
+searchInput.setAttribute('class' , 'search__input') 
+
 const searchButton = document.createElement("button");
-// The button is given a text value
 searchButton.textContent = "Search";
-//the button and search bar are given a couple words detailing what needs to be input
+searchButton.setAttribute('class' , 'search__button')
 searchContainer.appendChild(searchInput);
 searchContainer.appendChild(searchButton);
-// the searchcontainer is placed before the periodic table
 document.body.insertBefore(searchContainer, periodicTable);
 
-
-// The button is given an event listener which will trigger when the button is clicked
 searchButton.addEventListener("click", () => {
     const atomicNumber = parseInt(searchInput.value);
     if (isNaN(atomicNumber) || atomicNumber < 1 || atomicNumber > 118) {
@@ -96,20 +91,18 @@ searchButton.addEventListener("click", () => {
                       (i >= 75 && i <= 89) ? i + 29 :
                       (i >= 90 && i <= 103) ? i - 32 :
                       (i >= 104 && i <= 117) ? i - 14 : i + 1);
-        // if the element is found, the id is stored and loop is broken
         if (trueI === atomicNumber) {
             foundId = `element${i}`;
             break;
         }
     }
-    // If the element is found, it will be scrolled to and highlighted
+
     if (foundId) {
         const button = document.getElementById(foundId);
         button.scrollIntoView({ behavior: "smooth", block: "center" });
         button.style.backgroundColor = "yellow";
         setTimeout(() => button.style.backgroundColor = "", 1500);
     } else {
-        // If the element is not found, an alert will be shown
         alert("Element not found.");
     }
 });

@@ -1,5 +1,11 @@
 img {
-    width: 500px;
-    height:auto
+    width: 450px;
+    height: auto;; 
 }
 
+body {
+    background-color: #f8e5f8; 
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 18x;
+}
