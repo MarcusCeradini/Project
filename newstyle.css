@@ -52,12 +52,12 @@
 }
   
 .search__button {
-    background-color: #8995af;
+    background-color: #372842;
     padding: 14px 20px;
     color: #fff;
     cursor: pointer;
     border-radius: 10px;
-    border: 2px dashed #8995af;
+    border: 2px dashed #9280a0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: .4s;
     font-weight: bold;
@@ -66,13 +66,13 @@
 .search__button:hover {
     cursor: pointer;
     transition: .4s;
-    border: 2px dashed #8995af;
+    border: 2px dashed #895ba7;
     background-color: #fff;
-    color: #8995af;
+    color: #7851b3;
 }
 
 .search__button:active {
-    background-color: #8995af;
+    background-color: #675587;
    }
 
 .search__button span:last-child {
@@ -89,7 +89,8 @@
     margin:auto; 
 }
 
-.logo {
-    width: 300px; 
-    height: auto; 
+img {
+    height: 30%;
+    width: 30%;
+    margin: auto; 
 }
